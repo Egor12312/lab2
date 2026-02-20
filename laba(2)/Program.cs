@@ -1,7 +1,6 @@
 ﻿using System;
 
-public class Animal
-{
+public class Animal {
   public string Name;
   public int Age;
   public string Habitat;
@@ -10,16 +9,14 @@ public class Animal
   public double Weight;
   public string Color;
 
-  public Animal(string name, int age, string habitat, string dietType)
-  {
+  public Animal(string name, int age, string habitat, string dietType) {
     Name = name;
     Age = age;
     Habitat = habitat;
     DietType = dietType;
   }
 
-  public void ShowInfo()
-  {
+  public void ShowInfo() {
     Console.WriteLine($"Кличка: {Name}");
     Console.WriteLine($"Возраст: {Age}");
     Console.WriteLine($"Среда: {Habitat}");
