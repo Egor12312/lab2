@@ -32,7 +32,10 @@ class Program
 
   static void RunMenu(AnimalManager manager)
   {
-    bool isWork = true;
+    bool isWork;
+    string choice, name;
+
+    isWork = true;
 
     while (isWork == true)
     {
@@ -43,7 +46,7 @@ class Program
       Console.WriteLine("4. Exit");
       Console.Write("Choose action: ");
 
-      string choice = Console.ReadLine();
+      choice = Console.ReadLine();
 
       if (choice == "1")
       {
@@ -52,7 +55,8 @@ class Program
       else if (choice == "2")
       {
         Console.Write("Enter name: ");
-        string name = Console.ReadLine();
+
+        name = Console.ReadLine();
 
         manager.FindAnimalByName(name);
       }
@@ -74,19 +78,29 @@ class Program
 
   static void AddNewAnimal(AnimalManager manager)
   {
+    string name, habitat, foodType, typeChoice;
+    string furInput;
+    string waterType;
+    string venomInput;
+    string skinMoisture;
+    bool hasFur;
+    bool isVenomous;
+    int age;
+    double wingSpan;
+
     Console.WriteLine("\n--- ADD NEW ANIMAL ---");
 
     Console.Write("Enter name: ");
-    string name = Console.ReadLine();
+    name = Console.ReadLine();
 
     Console.Write("Enter age: ");
-    int age = Convert.ToInt32(Console.ReadLine());
+    age = Convert.ToInt32(Console.ReadLine());
 
     Console.Write("Enter habitat: ");
-    string habitat = Console.ReadLine();
+    habitat = Console.ReadLine();
 
     Console.Write("Enter food type: ");
-    string foodType = Console.ReadLine();
+    foodType = Console.ReadLine();
 
     Console.WriteLine("\nChoose type:");
     Console.WriteLine("1. Mammal");
@@ -96,16 +110,17 @@ class Program
     Console.WriteLine("5. Amphibian");
     Console.Write("Your choice: ");
 
-    string typeChoice = Console.ReadLine();
+    typeChoice = Console.ReadLine();
 
     Animal newAnimal = null;
 
     if (typeChoice == "1")
     {
       Console.Write("Has fur? (yes/no): ");
-      string furInput = Console.ReadLine();
 
-      bool hasFur = false;
+      furInput = Console.ReadLine();
+
+      hasFur = false;
 
       if (furInput == "yes")
       {
@@ -116,24 +131,27 @@ class Program
     }
     else if (typeChoice == "2")
     {
+
       Console.Write("Enter wingspan: ");
-      double wingSpan = Convert.ToDouble(Console.ReadLine());
+      wingSpan = Convert.ToDouble(Console.ReadLine());
 
       newAnimal = new Bird(name, age, habitat, foodType, wingSpan);
     }
     else if (typeChoice == "3")
     {
+
       Console.Write("Water type (fresh/salt): ");
-      string waterType = Console.ReadLine();
+      waterType = Console.ReadLine();
 
       newAnimal = new Fish(name, age, habitat, foodType, waterType);
     }
     else if (typeChoice == "4")
     {
-      Console.Write("Is venomous? (yes/no): ");
-      string venomInput = Console.ReadLine();
 
-      bool isVenomous = false;
+      Console.Write("Is venomous? (yes/no): ");
+      venomInput = Console.ReadLine();
+
+      isVenomous = false;
 
       if (venomInput == "yes")
       {
@@ -144,8 +162,9 @@ class Program
     }
     else if (typeChoice == "5")
     {
+
       Console.Write("Skin moisture: ");
-      string skinMoisture = Console.ReadLine();
+      skinMoisture = Console.ReadLine();
 
       newAnimal = new Amphibian(name, age, habitat, foodType, skinMoisture);
     }

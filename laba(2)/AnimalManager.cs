@@ -43,7 +43,7 @@ class AnimalManager
 
     Console.WriteLine("\n--- ANIMAL LIST ---");
 
-    for (int animalIndex = 0; animalIndex < animals.Count; animalIndex++)
+    for (int animalIndex = 0; animalIndex < animals.Count; ++animalIndex)
     {
       Console.WriteLine(animals[animalIndex].GetInfo());
       Console.WriteLine("---");
@@ -52,9 +52,10 @@ class AnimalManager
 
   public void FindAnimalByName(string searchName)
   {
-    bool found = false;
+    bool found; 
+    found = false;
 
-    for (int animalIndex = 0; animalIndex < animals.Count; animalIndex++)
+    for (int animalIndex = 0; animalIndex < animals.Count; ++animalIndex)
     {
       if (animals[animalIndex].Name.ToLower() == searchName.ToLower())
       {
