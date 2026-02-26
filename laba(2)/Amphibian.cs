@@ -2,21 +2,21 @@
 
 class Amphibian : Animal
 {
-  private string skinMoisture;
+  private string _skinMoisture;
 
   public Amphibian(string name, int age, string habitat, string foodType, string skinMoisture)
       : base(name, age, habitat, foodType)
   {
-    this.skinMoisture = skinMoisture;
+    _skinMoisture = skinMoisture;
   }
 
   public string SkinMoisture
   {
-    get { return skinMoisture; }
+    get { return _skinMoisture; }
   }
 
   public override string GetInfo()
   {
-    return base.GetInfo() + ", Type: Amphibian, Skin: " + skinMoisture;
+    return base.GetInfo() + ", Type: Amphibian, Skin: " + _skinMoisture;
   }
 }

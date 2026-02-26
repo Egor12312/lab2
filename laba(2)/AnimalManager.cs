@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class AnimalManager
 {
-  private static AnimalManager instance;
+  private static AnimalManager s_instance;
   private List<Animal> animals;
 
   private AnimalManager()
@@ -15,12 +15,12 @@ class AnimalManager
   {
     get
     {
-      if (instance == null)
+      if (s_instance == null)
       {
-        instance = new AnimalManager();
+        s_instance = new AnimalManager();
       }
 
-      return instance;
+      return s_instance;
     }
   }
 
@@ -52,7 +52,7 @@ class AnimalManager
 
   public void FindAnimalByName(string searchName)
   {
-    bool found; 
+    bool found;
     found = false;
 
     for (int animalIndex = 0; animalIndex < animals.Count; ++animalIndex)

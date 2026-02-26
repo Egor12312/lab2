@@ -2,44 +2,44 @@
 
 abstract class Animal
 {
-  private string name;
-  private int age;
-  private string habitat;
-  private string foodType;
+  private string _name;
+  private int _age;
+  private string _habitat;
+  private string _foodType;
 
   public Animal(string name, int age, string habitat, string foodType)
   {
-    this.name = name;
-    this.age = age;
-    this.habitat = habitat;
-    this.foodType = foodType;
+    _name = name;
+    _age = age;
+    _habitat = habitat;
+    _foodType = foodType;
   }
 
   public string Name
   {
-    get { return name; }
+    get { return _name; }
   }
 
   public int Age
   {
-    get { return age; }
+    get { return _age; }
   }
 
   public string Habitat
   {
-    get { return habitat; }
+    get { return _habitat; }
   }
 
   public string FoodType
   {
-    get { return foodType; }
+    get { return _foodType; }
   }
 
   public virtual string GetInfo()
   {
-    return "Name: " + name +
-           ", Age: " + age +
-           ", Habitat: " + habitat +
-           ", Food: " + foodType;
+    return "Name: " + _name +
+           ", Age: " + _age +
+           ", Habitat: " + _habitat +
+           ", Food: " + _foodType;
   }
 }

@@ -2,24 +2,24 @@
 
 class Mammal : Animal
 {
-  private bool hasFur;
+  private bool _hasFur;
 
   public Mammal(string name, int age, string habitat, string foodType, bool hasFur)
       : base(name, age, habitat, foodType)
   {
-    this.hasFur = hasFur;
+    _hasFur = hasFur;
   }
 
   public bool HasFur
   {
-    get { return hasFur; }
+    get { return _hasFur; }
   }
 
   public override string GetInfo()
   {
     string furText;
 
-    if (hasFur == true)
+    if (_hasFur == true)
     {
       furText = "yes";
     }

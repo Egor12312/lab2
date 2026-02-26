@@ -2,21 +2,21 @@
 
 class Bird : Animal
 {
-  private double wingSpan;
+  private double _wingSpan;
 
   public Bird(string name, int age, string habitat, string foodType, double wingSpan)
       : base(name, age, habitat, foodType)
   {
-    this.wingSpan = wingSpan;
+    _wingSpan = wingSpan;
   }
 
   public double WingSpan
   {
-    get { return wingSpan; }
+    get { return _wingSpan; }
   }
 
   public override string GetInfo()
   {
-    return base.GetInfo() + ", Type: Bird, Wingspan: " + wingSpan + " m";
+    return base.GetInfo() + ", Type: Bird, Wingspan: " + _wingSpan + " m";
   }
 }
